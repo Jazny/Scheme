@@ -4,12 +4,16 @@
 		(+ 1 (list-len (cdr l)))))
 
 (define (inc-list n)
-    #f ;; TODO: return something other than FALSE
-    )
+	(if (= n 0)
+		'()
+		(append (inc-list (- n 1)) (list n))))
 
 (define (rev-list l)
-    #f ;; TODO: return something other than FALSE
-    )
+	(if (null? l)
+		l
+		(begin
+		(cons (car l) l)
+		(rev-list (cdr l)))))
 
 (define (my-map f l)
     #f ;; TODO: return something other than FALSE
