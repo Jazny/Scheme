@@ -1,6 +1,7 @@
 (define (list-len l)
-    #f ;; TODO: return something other than FALSE
-    )
+	(if (null? l)
+		0
+		(+ 1 (list-len (cdr l)))))
 
 (define (inc-list n)
     #f ;; TODO: return something other than FALSE
