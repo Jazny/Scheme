@@ -14,8 +14,9 @@
 		(append (rev-list (cdr l)) (list (car l)))))
 
 (define (my-map f l)
-	
-	)
+	(if (null? l)
+		l
+		(cons (apply f (list (car l))) (my-map f (cdr l)))))
 
 (define (merge-sort l)
     ;; Split a list into two halves, returned in a pair. You may uncomment this.
@@ -27,5 +28,6 @@
                     (split-rec (cons (append front (list (car back))) (cdr back))))))
         (split-rec (cons (list (car l)) (cdr l))))
 
-    #f ;; TODO: return something other than FALSE
+	;; base case:
+	;; else, recurse:
     )
